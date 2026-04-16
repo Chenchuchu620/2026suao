@@ -1204,11 +1204,17 @@ document.getElementById('step2-next').addEventListener('click', () => {
 // Step 3 nav
 document.getElementById('step3-back').addEventListener('click', () => regGoStep(2));
 document.getElementById('step3-submit').addEventListener('click', () => {
+  const howHeardVal = Array.from(document.querySelectorAll('#how-heard-grid input:checked')).map(i => i.value).join('、');
+  if (!howHeardVal)          { alert('請選擇如何得知本次活動。\nPlease select how you heard about this event.'); return; }
+  if (!regData.excitement)   { alert('請選擇期待程度。\nPlease select your excitement level.'); return; }
+  if (!regData.prevExp)      { alert('請選擇是否曾參加過類似活動。\nPlease select your previous experience.'); return; }
+  if (!regData.transport)    { alert('請選擇交通方式。\nPlease select your transportation method.'); return; }
+
   const btn = document.getElementById('step3-submit');
   btn.disabled    = true;
   btn.textContent = '送出中… Submitting…';
 
-  regData.howHeard = Array.from(document.querySelectorAll('#how-heard-grid input:checked')).map(i => i.value).join('、');
+  regData.howHeard = howHeardVal;
 
   const hc = regData.headcount || '1';
   const payload = new FormData();
