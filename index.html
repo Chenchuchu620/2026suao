@@ -284,7 +284,7 @@
     .pkg-desc { font-size: 14px; color: rgba(245,237,214,.5); line-height: 1.6; }
     .pkg-expand { display: none; margin-top: 14px; border-radius: 16px; overflow: hidden; background: rgba(27,48,69,.5); border: 1px solid rgba(232,109,45,.2); padding: 16px; text-align: center; }
     .pkg-expand.show { display: block; }
-    .pkg-expand img { width: 100%; max-height: 320px; object-fit: contain; border-radius: 10px; }
+    .pkg-expand img { width: 100%; max-height: 600px; object-fit: contain; border-radius: 10px; }
     .pkg-expand-note { font-size: 13px; color: rgba(245,237,214,.4); margin-top: 10px; }
 
     .policy-box { background: rgba(27,48,69,.5); border: 1px solid rgba(232,109,45,.15); border-radius: 12px; padding: 18px 20px; font-size: 15px; line-height: 1.9; color: rgba(245,237,214,.55); margin-bottom: 14px; max-height: 150px; overflow-y: auto; }
@@ -505,7 +505,7 @@
 <div id="page-program" class="page">
   <div class="page-inner">
     <section class="fade">
-      <div class="s-label">— 活動項目 PROGRAM —</div>
+      <div class="s-label">— PROGRAM —</div>
       <h2 class="s-title">海洋盛宴</h2>
       <div class="pg">
         <div class="pc">
@@ -652,7 +652,7 @@
 <div id="page-sponsors" class="page">
   <div class="page-inner">
     <section class="fade">
-      <div class="s-label">— 贊助企業 SPONSORS —</div>
+      <div class="s-label">— SPONSORS —</div>
       <h2 class="s-title">感謝支持</h2>
       <div class="mg">
         <a href="mailto:suaoharbor@gmail.com" target="_blank" rel="noopener" class="gc gc-glow" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px;text-decoration:none;">
@@ -715,7 +715,7 @@
 <div id="page-location" class="page">
   <div class="page-inner">
     <section class="fade">
-      <div class="s-label">— 交通資訊 LOCATION —</div>
+      <div class="s-label">— LOCATION —</div>
       <h2 class="s-title">找到我們</h2>
       <!-- 區塊 1：地點 & 期間 -->
       <div class="loc-card" style="margin-bottom:18px;flex-direction:row;flex-wrap:wrap;gap:32px;min-height:unset;">
@@ -806,8 +806,8 @@
 <div id="page-register" class="page">
   <div class="page-inner">
     <section class="fade">
-      <div class="s-label">— 活動報名 REGISTER —</div>
-      <h2 class="s-title">保留你的位置</h2>
+      <div class="s-label">— REGISTER —</div>
+      <h2 class="s-title">活動報名．訂下你的位置</h2>
 
       <div class="reg-wrap">
         <!-- Step indicator -->
@@ -824,70 +824,71 @@
           <div class="reg-section-title">基本資訊<br><span style="font-size:14px;font-weight:400;color:rgba(245,237,214,.45);">Basic Information</span></div>
 
           <div class="reg-field">
-            <label>電子郵件 EMAIL *</label>
-            <input type="email" class="reg-input" id="r-email" placeholder="your@email.com">
-          </div>
-
-          <div class="reg-field">
             <label>方案選擇 PACKAGE *</label>
             <div class="pkg-grid">
               <div class="pkg-card" data-pkg="NT$1,888 黑鮪靠港" data-amount="1888" data-expand="pkg-expand-1888">
                 <div class="pkg-price">NT$1,888</div>
-                <div class="pkg-name">黑鮪靠港</div>
-                <div class="pkg-desc">晚宴 + 紀念品 ×5<br>集章競標活動</div>
+                <div class="pkg-name">黑鮪入港</div>
+                <div class="pkg-desc">黑鮪傳奇饗宴 + 紀念品 ×5<br>集章競標活動</div>
               </div>
               <div class="pkg-card" data-pkg="NT$2,000 港灣旅人" data-amount="2000" data-expand="pkg-expand-2000">
                 <div class="pkg-price">NT$2,000</div>
                 <div class="pkg-name">港灣旅人</div>
-                <div class="pkg-desc">黑鮪靠港全包含<br>+ 魚丸 DIY 工作坊</div>
+                <div class="pkg-desc">黑鮪入港全包含<br>+ 手工魚丸DIY</div>
               </div>
             </div>
             <!-- 方案展開圖 1888 -->
             <div class="pkg-expand" id="pkg-expand-1888">
-              <img src="" alt="黑鮪靠港 方案內容物" id="pkg-img-1888">
-              <div class="pkg-expand-note">黑鮪靠港 方案內容物一覽（圖片待更新）</div>
+              <img src="素材/黑鮪入港紀念品.png" alt="黑鮪入港 方案內容物" id="pkg-img-1888">
+              <div class="pkg-expand-note">黑鮪入港 方案內容物一覽</div>
             </div>
             <!-- 方案展開圖 2000 -->
             <div class="pkg-expand" id="pkg-expand-2000">
-              <img src="" alt="港灣旅人 方案內容物" id="pkg-img-2000">
-              <div class="pkg-expand-note">港灣旅人 方案內容物一覽（圖片待更新）</div>
+              <img src="素材/漁港旅人紀念品.png" alt="港灣旅人 方案內容物" id="pkg-img-2000">
+              <div class="pkg-expand-note">港灣旅人 方案內容物一覽</div>
             </div>
           </div>
 
           <div class="reg-field">
             <label>退費政策 REFUND POLICY</label>
             <div class="policy-box">
-              活動前 14 天以上取消：退還 90% 票款。<br>
-              活動前 7–13 天取消：退還 50% 票款。<br>
-              活動前 6 天內取消：恕不退款。<br>
-              可於活動前 3 天辦理票券轉讓。<br>
-              如遇不可抗力因素，主辦單位保留調整或取消活動之權利並全額退款。<br><br>
-              Cancellation 14+ days before event: 90% refund.<br>
-              7–13 days before: 50% refund. Within 6 days: No refund.<br>
-              Ticket transfers allowed with 3-day notice.<br>
-              Force majeure: full refund provided.
+              根據相關法令規定，因本活動包含具時效性之生鮮食材預購（黑鮪魚）及客製化周邊物資準備，報名完成後之退費規範如下：<br>
+              取消與退費基準：<br>
+              活動日前 14 天（含）以上取消：退還報名費總額 90%（扣除 10% 行政處理費及匯費）。<br>
+              活動日前 7 至 13 天（含）取消：退還報名費總額 50%。因食材及限定周邊物資已進入採購與製作流程，恕無法全額退款。<br>
+              活動日前 6 天內及活動當日取消：恕不予退還款項。主辦單位將保留該參加者之周邊品，請於活動後一週內至指定地點領取，逾期視同放棄。<br><br>
+              名額轉讓：<br>
+              若報名後因故無法參加，建議將名額轉讓予親友，並請最晚於活動前 3 日主動通知主辦單位更換投保資料，以保障權益。<br><br>
+              不可抗力因素：<br>
+              如遇天災（如颱風、地震等）且經宜蘭縣政府宣布停止上班上課，或因不可抗力因素導致活動取消，主辦單位將扣除已發生之必要支出（如租金、押金、備料、匯費等等相關費用）後，退還剩餘款項。<br>
+              主辦單位將保留活動最終解釋權，並將相關證明單據公告，以示公正。</div>
             </div>
-
-          </div>
 
           <div class="reg-field">
             <label>注意事項 IMPORTANT NOTES</label>
-            <div class="policy-box">123456</div>
+            <div class="policy-box">
+              本活動為大型宴席（共 30 桌），恕無法提供個別菜色客製化調整或更換。<br>
+              本活動為全海鮮宴席，恕不提供素食桌。</div>
           </div>
 
           <div class="reg-field">
             <label>過敏原告知 ALLERGEN NOTICE</label>
-            <div class="policy-box">123456</div>
+            <div class="policy-box">
+              全席菜位皆以海鮮為主，若您對特定食材（如蝦、蟹、貝類等）過敏，請於用餐時自行評估並避開該菜品。<br>
+              我們將於現場菜單卡上標示主要過敏原資訊，以盡提醒之義務，但無法保證廚房環境完全無交叉污染之風險。<br>
+              若因個人特殊飲食需求（如：不食豬肉、清真需求、純素等）導致現場部分菜色無法食用，恕不提供額外餐點或退費。</div>
           </div>
 
           <div class="reg-field">
             <label>授權同意 CONSENT & AUTHORIZATION</label>
-            <div class="policy-box">123456</div>
+            <div class="policy-box">
+              為保障參加者安全，本活動將投保公共意外責任險，請務必填寫真實資料。<br>
+              報名即視為同意主辦單位（漁悅季）於活動中進行拍攝、錄影，並授權其影像用於社群媒體及後續宣傳。</div>
           </div>
 
           <div class="reg-field">
             <label>DIY 工作坊告知 DIY WORKSHOP NOTICE</label>
-            <div class="policy-box">123456</div>
+            <div class="policy-box">參與 2000 元方案之「手工魚丸 DIY」者，請準時於指定場次報到。逾時 15 分鐘未到者視同放棄體驗資格。</div>
             <label class="reg-check">
               <input type="checkbox" id="r-diy">
               <span>我已閱讀並了解上述注意事項事項<br><span style="font-size:13px;opacity:.7;">I have read and understood the DIY workshop information.</span></span>
@@ -911,6 +912,29 @@
           <div class="reg-field">
             <label>聯絡電話 PHONE NUMBER *</label>
             <input type="tel" class="reg-input" id="r-phone" placeholder="0912345678" maxlength="10" inputmode="numeric">
+          </div>
+
+          <div class="reg-field">
+            <label>電子郵件 EMAIL *</label>
+            <input type="email" class="reg-input" id="r-email" placeholder="your@email.com">
+          </div>
+
+          <div class="reg-field">
+            <label>收件地址 ADDRESS *</label>
+            <input type="text" class="reg-input" id="r-address" placeholder="例：台北市中正區重慶南路一段122號">
+          </div>
+
+          <div class="reg-field" id="diy-slot-field" style="display:none;">
+            <label>手工魚丸 DIY 時段選擇 * <span style="font-size:12px;color:rgba(245,237,214,.45);">請選擇 2 個場次</span></label>
+            <div class="cond-note">每場次約 45 分鐘，每人需選擇 2 個時段備用（主辦依人數安排其中一場）。</div>
+            <div class="check-grid" id="diy-slots">
+              <div class="check-item" data-val="11:15"><input type="checkbox"> 11:15</div>
+              <div class="check-item" data-val="12:15"><input type="checkbox"> 12:15</div>
+              <div class="check-item" data-val="13:15"><input type="checkbox"> 13:15</div>
+              <div class="check-item" data-val="14:15"><input type="checkbox"> 14:15</div>
+              <div class="check-item" data-val="15:15"><input type="checkbox"> 15:15</div>
+              <div class="check-item" data-val="16:15"><input type="checkbox"> 16:15</div>
+            </div>
           </div>
 
           <div class="reg-field">
@@ -1051,32 +1075,51 @@
           </div>
 
           <div class="reg-field">
-            <label>活動當天交通方式 TRANSPORTATION</label>
+            <label>活動當天可能交通方式 TRANSPORTATION</label>
             <div class="radio-row" id="transport-row">
               <div class="radio-pill" data-val="自行開車 Self-driving">自行開車</div>
               <div class="radio-pill" data-val="大眾運輸 Public Transport">大眾運輸</div>
               <div class="radio-pill" data-val="騎機車 Motorcycle">騎機車</div>
-              <div class="radio-pill" data-val="共乘 Carpool">共乘</div>
+              <div class="radio-pill" data-val="共乘 Carpool">計程車</div>
               <div class="radio-pill" data-val="其他 Other">其他</div>
             </div>
           </div>
 
           <div class="reg-nav">
             <button class="reg-btn-back" id="step3-back">← 上一步</button>
-            <button class="reg-btn-next" id="step3-submit">送出報名 SUBMIT 🐟</button>
+            <button class="reg-btn-next" id="step3-submit">送出報名 SUBMIT</button>
           </div>
         </div>
 
         <!-- ── SUCCESS ── -->
         <div id="reg-success" class="reg-panel" style="display:none;text-align:center;padding:80px 0;">
-          <div style="font-size:64px;margin-bottom:24px;">🐟</div>
-          <div style="font-family:'Noto Serif TC',serif;font-size:32px;font-weight:900;color:var(--cream);margin-bottom:16px;">報名成功！<br>Registration Complete</div>
+          <div style="margin-bottom:24px;"><img src="素材/黑鮪魚.png" width="300"></div>
+          <div style="font-family:'Noto Serif TC',serif;font-size:32px;font-weight:900;color:var(--cream);margin-bottom:16px;">感恩報名！</div>
           <p style="font-size:15px;color:rgba(245,237,214,.6);line-height:1.9;">
-            感謝你的報名，我們已收到你的資料。<br>
-            Thank you! We've received your registration.<br><br>
-            請確認 Email 信箱是否有收到確認信。<br>
-            Please check your inbox for a confirmation email.
+            感謝你的報名，我們已收到你的資料。<br><br>
+            三個工作天內款項核對成功後，會寄送 Email 通知，請確認是否有收到確認信！<br><br>
+            報名截止後、集章活動開始前<br>
+            我們將會寄送活動相關資訊與注意事項，請務必留意信件內容。<br><br>
+            歡迎加入蘇澳港國際青年商會Line@<br>
+            若有任何問題敬請留言，服務人員將會盡快回覆。<br><br>
+            歡迎追蹤社群平台，最新活動詳情與配套文化分享等內容皆會於發布社群<br>
           </p>
+          <div style="margin-top:32px;display:flex;flex-direction:column;align-items:center;gap:12px;">
+            <a href="https://lin.ee/WZthu1k" target="_blank" rel="noopener" class="sbadge" style="text-decoration:none;">
+              <div class="sbadge-em"><img src="icon/line@.png" alt="Line@" width="48"></div>
+              <div class="sbadge-h">Line@<br>官方客服</div>
+            </a>
+            <div style="display:flex;gap:12px;">
+              <a href="https://www.facebook.com/share/14XZ8jiz14T/?mibextid=wwXIfr" target="_blank" rel="noopener" class="sbadge" style="text-decoration:none;">
+                <div class="sbadge-em"><img src="icon/fb.png" alt="Facebook" width="48"></div>
+                <div class="sbadge-h">Facebook</div>
+              </a>
+              <a href="https://www.instagram.com/suaoharborjc?igsh=a3F2aHQxaDBjM2Rl" target="_blank" rel="noopener" class="sbadge" style="text-decoration:none;">
+                <div class="sbadge-em"><img src="icon/ins.png" alt="Instagram" width="48"></div>
+                <div class="sbadge-h">Instagram</div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1289,7 +1332,24 @@ document.querySelectorAll('.pkg-card').forEach(card => {
     document.querySelectorAll('.pkg-expand').forEach(e => e.classList.remove('show'));
     const expandId = card.dataset.expand;
     if (expandId) document.getElementById(expandId).classList.add('show');
+    // 顯示/隱藏 DIY 時段
+    document.getElementById('diy-slot-field').style.display = card.dataset.amount === '2000' ? '' : 'none';
     updateAmount();
+  });
+});
+
+// DIY 時段 check-item（六選二）
+document.querySelectorAll('#diy-slots .check-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const selected = document.querySelectorAll('#diy-slots .check-item.selected');
+    if (item.classList.contains('selected')) {
+      item.classList.remove('selected');
+      item.querySelector('input').checked = false;
+    } else {
+      if (selected.length >= 2) { alert('最多選擇 2 個時段。'); return; }
+      item.classList.add('selected');
+      item.querySelector('input').checked = true;
+    }
   });
 });
 
@@ -1360,12 +1420,9 @@ document.querySelectorAll('#how-heard-grid .check-item').forEach(item => {
 
 // Step 1 → 2
 document.getElementById('step1-next').addEventListener('click', () => {
-  const email = document.getElementById('r-email').value.trim();
-  const diy   = document.getElementById('r-diy').checked;
-  if (!email || !email.includes('@')) { alert('請填入有效的電子郵件。\nPlease enter a valid email.'); return; }
+  const diy = document.getElementById('r-diy').checked;
   if (!regData.package) { alert('請選擇方案。\nPlease select a package.'); return; }
   if (!diy) { alert('請確認已閱讀 DIY 工作坊告知。\nPlease acknowledge the DIY workshop notice.'); return; }
-  regData.email = email;
   regGoStep(2);
 });
 
@@ -1376,8 +1433,19 @@ document.getElementById('step2-next').addEventListener('click', () => {
   const phone    = document.getElementById('r-phone').value.trim();
   const transfer = document.getElementById('r-transfer').value.trim();
   const hc       = regData.headcount;
+  const email = document.getElementById('r-email').value.trim();
   if (!name)  { alert('請填入姓名。\nPlease enter your name.'); return; }
   if (!phone || !/^09\d{8}$/.test(phone)) { alert('請填入有效的台灣手機號碼（10碼，例如 0912345678）。\nPlease enter a valid Taiwan mobile number (10 digits).'); return; }
+  const address = document.getElementById('r-address').value.trim();
+  if (!email || !email.includes('@')) { alert('請填入有效的電子郵件。\nPlease enter a valid email.'); return; }
+  regData.email = email;
+  if (!address) { alert('請填入收件地址。\nPlease enter your address.'); return; }
+  regData.address = address;
+  if (regData.packageAmount === '2000') {
+    const diySelected = [...document.querySelectorAll('#diy-slots .check-item.selected')].map(el => el.dataset.val);
+    if (diySelected.length !== 2) { alert('請選擇 2 個 DIY 時段。\nPlease select 2 DIY time slots.'); return; }
+    regData.diySlots = diySelected.join('、');
+  }
   if (!hc)    { alert('請選擇報名人數。\nPlease select the number of attendees.'); return; }
   if (hc === '1' && !regData.seating) { alert('請選擇座位社交偏好。\nPlease select a seating preference.'); return; }
   if (hc === '2') {
@@ -1438,6 +1506,8 @@ document.getElementById('step3-submit').addEventListener('click', () => {
     paymentAmount: 'NT$' + (regData.paymentTotal || regData.packageAmount),
     transfer:      regData.transfer,
     dietary:       regData.dietary || '',
+    address:       regData.address || '',
+    diySlots:      regData.diySlots || '',
     howHeard:      regData.howHeard,
     excitement:    regData.excitement || '',
     prevExp:       regData.prevExp || '',
