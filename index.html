@@ -341,7 +341,22 @@
     .ft-logo { width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(232,109,45,.35); }
     .ft-t1 { font-size: 13px; color: rgba(245,237,214,.4); letter-spacing: 1px; }
     .ft-t2 { font-size: 11px; color: rgba(245,237,214,.25); letter-spacing: 2px; margin-top: 3px; }
-    .ft-right { font-size: 11px; letter-spacing: 3px; color: rgba(245,237,214,.25); }
+    .ft-right { font-size: 11px; letter-spacing: 3px; color: rgba(245,237,214,.25); display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+    .ft-links { display: flex; gap: 16px; }
+    .ft-link { font-size: 10px; letter-spacing: 2px; color: rgba(245,237,214,.2); cursor: pointer; border-bottom: 1px solid rgba(245,237,214,.1); transition: color .2s; }
+    .ft-link:hover { color: rgba(232,109,45,.6); border-color: rgba(232,109,45,.4); }
+    /* ── LEGAL MODAL ── */
+    .legal-overlay { display: none; position: fixed; inset: 0; background: rgba(5,18,30,.88); z-index: 9000; backdrop-filter: blur(6px); overflow-y: auto; padding: 40px 20px; }
+    .legal-overlay.open { display: flex; justify-content: center; align-items: flex-start; }
+    .legal-box { background: rgba(10,28,44,.97); border: 1px solid rgba(232,109,45,.2); border-radius: 24px; max-width: 720px; width: 100%; padding: 48px 44px; position: relative; }
+    .legal-close { position: absolute; top: 20px; right: 24px; font-size: 22px; color: rgba(245,237,214,.4); cursor: pointer; line-height: 1; transition: color .2s; }
+    .legal-close:hover { color: var(--orange); }
+    .legal-box h2 { font-family: 'Noto Serif TC', serif; font-size: 20px; color: var(--orange-lt); margin-bottom: 28px; letter-spacing: 2px; }
+    .legal-box h3 { font-family: 'Noto Serif TC', serif; font-size: 14px; color: var(--cream); margin: 20px 0 6px; }
+    .legal-box p, .legal-box li { font-size: 13px; line-height: 1.9; color: rgba(245,237,214,.5); }
+    .legal-box ul { padding-left: 18px; margin: 6px 0; }
+    .legal-box .legal-section { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(232,109,45,.1); }
+    .legal-box .legal-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
@@ -497,7 +512,7 @@
         <div class="ft-t2">蘇澳港國際青年商會</div>
       </div>
     </div>
-    <div class="ft-right">© 2026 ChenChuChu . All Rights Reserved .</div>
+    <div class="ft-right"><span>© 2026 ChenChuChu . All Rights Reserved .</span><div class="ft-links"><span class="ft-link" onclick="openLegal('tos')">服務條款</span><span class="ft-link" onclick="openLegal('pp')">隱私權政策</span></div></div>
   </footer>
 </div>
 
@@ -595,7 +610,7 @@
         <div class="ft-t2">蘇澳港國際青年商會</div>
       </div>
     </div>
-    <div class="ft-right">© 2026 ChenChuChu . All Rights Reserved .</div>
+    <div class="ft-right"><span>© 2026 ChenChuChu . All Rights Reserved .</span><div class="ft-links"><span class="ft-link" onclick="openLegal('tos')">服務條款</span><span class="ft-link" onclick="openLegal('pp')">隱私權政策</span></div></div>
   </footer>
 </div>
 
@@ -657,7 +672,7 @@
         <div class="ft-t2">蘇澳港國際青年商會</div>
       </div>
     </div>
-    <div class="ft-right">© 2026 ChenChuChu . All Rights Reserved .</div>
+    <div class="ft-right"><span>© 2026 ChenChuChu . All Rights Reserved .</span><div class="ft-links"><span class="ft-link" onclick="openLegal('tos')">服務條款</span><span class="ft-link" onclick="openLegal('pp')">隱私權政策</span></div></div>
   </footer>
 </div>
 
@@ -720,7 +735,7 @@
         <div class="ft-t2">蘇澳港國際青年商會</div>
       </div>
     </div>
-    <div class="ft-right">© 2026 ChenChuChu . All Rights Reserved .</div>
+    <div class="ft-right"><span>© 2026 ChenChuChu . All Rights Reserved .</span><div class="ft-links"><span class="ft-link" onclick="openLegal('tos')">服務條款</span><span class="ft-link" onclick="openLegal('pp')">隱私權政策</span></div></div>
   </footer>
 </div>
 
@@ -811,7 +826,7 @@
         <div class="ft-t2">蘇澳港國際青年商會</div>
       </div>
     </div>
-    <div class="ft-right">© 2026 ChenChuChu . All Rights Reserved .</div>
+    <div class="ft-right"><span>© 2026 ChenChuChu . All Rights Reserved .</span><div class="ft-links"><span class="ft-link" onclick="openLegal('tos')">服務條款</span><span class="ft-link" onclick="openLegal('pp')">隱私權政策</span></div></div>
   </footer>
 </div>
 
@@ -883,7 +898,11 @@
             <label>注意事項 IMPORTANT NOTES</label>
             <div class="policy-box">
               本活動為大型宴席（共 30 桌），恕無法提供個別菜色客製化調整或更換。<br>
-              本活動為全海鮮宴席，恕不提供素食桌。</div>
+              本活動為全海鮮宴席，恕不提供素食桌。<br>
+              未成年人費用說明，沒有帶小孩者請尊重一人一份的菜色由家長取用。<br>
+              小孩還是得算一個人頭！連寶寶都是<br>
+              因為人數眾多沒辦法依依劃分小孩跟成人，所有的周邊孩子也都會有一份！<br>
+              一人一份的菜就先拿給孩子，看是要家長先吃還是打包回家都可以！</div>
           </div>
 
           <div class="reg-field">
@@ -906,7 +925,7 @@
             <div class="policy-box">參與 2000 元方案之「手工魚丸 DIY」者，請準時於指定場次報到。逾時 15 分鐘未到者視同放棄體驗資格。</div>
             <label class="reg-check">
               <input type="checkbox" id="r-diy">
-              <span>我已閱讀並了解上述注意事項事項<br><span style="font-size:13px;opacity:.7;">I have read and understood the DIY workshop information.</span></span>
+              <span>已閱讀並同意上述事項<br><span style="font-size:13px;opacity:.7;">I have read and understood the DIY workshop information.</span></span>
             </label>
           </div>
 
@@ -997,6 +1016,13 @@
               <input type="text" class="reg-input" id="r-friend1" placeholder="朋友姓名 / Companion's name">
             </div>
             <div class="reg-field">
+              <label>收據是否要分開開立？SEPARATE RECEIPTS?</label>
+              <div class="radio-row" id="receipt-duo-row">
+                <div class="radio-pill" data-val="是">是</div>
+                <div class="radio-pill" data-val="否">否</div>
+              </div>
+            </div>
+            <div class="reg-field">
               <label>座位社交偏好 SEATING PREFERENCE *</label>
               <div class="seat-grid" id="seat-grid-duo">
                 <div class="seat-card" data-val="【外向社交桌】我想交朋友！(Extrovert / Social Table: I'm here to network!)">
@@ -1030,12 +1056,24 @@
               <input type="text" class="reg-input" id="r-friend9" placeholder="朋友 9 姓名" style="margin-bottom:10px;">
               <input type="text" class="reg-input" id="r-friend10" placeholder="朋友 10 姓名">
             </div>
+            <div class="reg-field">
+              <label>收據是否要分開開立？SEPARATE RECEIPTS?</label>
+              <div class="radio-row" id="receipt-group-row">
+                <div class="radio-pill" data-val="是">是</div>
+                <div class="radio-pill" data-val="否">否</div>
+              </div>
+            </div>
           </div>
 
           <div class="reg-field">
             <label>付款金額 PAYMENT AMOUNT</label>
             <input type="text" class="reg-input" id="r-amount" readonly placeholder="請先選擇方案與人數">
-          </div>
+            <div class="policy-box" style="margin-top:12px;">
+              主辦委任代收代付帳號<br><br>
+              銀行：中國信託 822 羅東分行 3164<br>
+              帳號：164540305017<br>
+              戶名：麥卡錫自控科技企業社
+            </div>          </div>
 
           <div class="reg-field">
             <label>匯款末五碼 LAST 5 DIGITS OF TRANSFER *</label>
@@ -1060,12 +1098,15 @@
           <div class="reg-field">
             <label>您是如何得知本次活動的？HOW DID YOU HEAR ABOUT THIS? (可複選)</label>
             <div class="check-grid" id="how-heard-grid">
-              <label class="check-item"><input type="checkbox" value="朋友／家人推薦 Friend/Family Referral">朋友／家人推薦</label>
-              <label class="check-item"><input type="checkbox" value="Facebook / Instagram">Facebook / Instagram</label>
-              <label class="check-item"><input type="checkbox" value="活動官網 Official Website">活動官網</label>
-              <label class="check-item"><input type="checkbox" value="媒體報導 Media Coverage">媒體報導</label>
-              <label class="check-item"><input type="checkbox" value="Google 搜尋 Google Search">Google 搜尋</label>
-              <label class="check-item"><input type="checkbox" value="其他 Other">其他</label>
+              <label class="check-item"><input type="checkbox" value="親友推薦">親友推薦</label>
+              <label class="check-item"><input type="checkbox" value="Facebook">Facebook</label>
+              <label class="check-item"><input type="checkbox" value="Instagram">Instagram</label>
+              <label class="check-item"><input type="checkbox" value="Threads">Threads</label>
+              <label class="check-item"><input type="checkbox" value="陳楚楚">陳楚楚</label>
+              <label class="check-item"><input type="checkbox" value="活動官網">活動官網</label>
+              <label class="check-item"><input type="checkbox" value="合作單位分享">合作單位分享</label>
+              <label class="check-item"><input type="checkbox" value="贊助單位分享">贊助單位分享</label>
+              <label class="check-item"><input type="checkbox" value="其他">其他</label>
             </div>
           </div>
 
@@ -1090,7 +1131,7 @@
           </div>
 
           <div class="reg-field">
-            <label>活動當天可能交通方式 TRANSPORTATION</label>
+            <label>活動當天「可能」交通方式 TRANSPORTATION</label>
             <div class="radio-row" id="transport-row">
               <div class="radio-pill" data-val="自行開車 Self-driving">自行開車</div>
               <div class="radio-pill" data-val="大眾運輸 Public Transport">大眾運輸</div>
@@ -1117,7 +1158,7 @@
             我們將會寄送活動相關資訊與注意事項，請務必留意信件內容。<br><br>
             歡迎加入蘇澳港國際青年商會Line@<br>
             若有任何問題敬請留言，服務人員將會盡快回覆。<br><br>
-            歡迎追蹤社群平台，最新活動詳情與配套文化分享等內容皆會於發布社群<br>
+            歡迎追蹤社群平台，最新活動詳情與配套文化分享等內容皆會於發布社群！<br>
           </p>
           <div style="margin-top:32px;display:flex;flex-direction:column;align-items:center;gap:12px;">
             <a href="https://lin.ee/WZthu1k" target="_blank" rel="noopener" class="sbadge" style="text-decoration:none;">
@@ -1148,7 +1189,7 @@
         <div class="ft-t2">蘇澳港國際青年商會</div>
       </div>
     </div>
-    <div class="ft-right">© 2026 ChenChuChu . All Rights Reserved .</div>
+    <div class="ft-right"><span>© 2026 ChenChuChu . All Rights Reserved .</span><div class="ft-links"><span class="ft-link" onclick="openLegal('tos')">服務條款</span><span class="ft-link" onclick="openLegal('pp')">隱私權政策</span></div></div>
   </footer>
 </div>
 
@@ -1378,9 +1419,11 @@ function initPills(containerId, key) {
     });
   });
 }
-initPills('gender-row',   'gender');
-initPills('prev-exp-row', 'prevExp');
-initPills('transport-row','transport');
+initPills('gender-row',       'gender');
+initPills('prev-exp-row',     'prevExp');
+initPills('transport-row',    'transport');
+initPills('receipt-duo-row',  'receipt');
+initPills('receipt-group-row','receipt');
 
 // 人數選擇
 document.querySelectorAll('#headcount-row .radio-pill').forEach(pill => {
@@ -1518,6 +1561,7 @@ document.getElementById('step3-submit').addEventListener('click', () => {
     gender:        hc === '1' ? (regData.gender || '') : '',
     seating:       hc !== '10' ? (regData.seating || '') : '',
     companions:    regData.companions || '',
+    receipt:       hc !== '1' ? (regData.receipt || '') : '',
     paymentAmount: 'NT$' + (regData.paymentTotal || regData.packageAmount),
     transfer:      regData.transfer,
     dietary:       regData.dietary || '',
@@ -1571,6 +1615,91 @@ window.addEventListener('scroll', () => {
   const p = Math.min(1, window.scrollY / window.innerHeight);
   navLogo.style.boxShadow = `0 0 ${20 + p * 35}px rgba(232,109,45,${(0.25 + p * 0.45).toFixed(2)})`;
 }, { passive: true });
+</script>
+
+<!-- ── LEGAL MODALS ── -->
+<div class="legal-overlay" id="modal-tos">
+  <div class="legal-box">
+    <span class="legal-close" onclick="closeLegal('tos')">✕</span>
+    <h2>服務條款 Terms of Service</h2>
+    <p style="margin-bottom:20px;font-size:12px;color:rgba(245,237,214,.3);">2026 蘇澳港灣漁悅季：官方網站服務條款</p>
+    <p>歡迎您使用「2026 蘇澳港灣漁悅季」官方網站（以下簡稱「本站」）。當您存取或使用本站提供之各項服務（如資訊查詢、活動報名等）時，即表示您已閱讀、瞭解並同意接受本條款之所有內容。</p>
+    <div class="legal-section">
+      <h3>1. 服務內容與變更</h3>
+      <p>本站由 2026 蘇澳港灣漁悅季籌備委員會（以下簡稱「主辦單位」）委託技術人員開發，旨在提供活動相關資訊及線上行政流程。本站保有隨時修改、暫停或終止本服務之權利，並將於官網公告，不另行個別通知。</p>
+    </div>
+    <div class="legal-section">
+      <h3>2. 使用者義務</h3>
+      <p>您保證於報名表單中所填寫之資料均為真實、正確且完整。若因資料不實導致權益受損（如保險理賠、聯繫失敗），由使用者自行負責。</p>
+    </div>
+    <div class="legal-section">
+      <h3>3. 智慧財產權聲明</h3>
+      <p>本站所有內容，包括但不限於文字、圖片、標誌、版面設計及程式原始碼，其著作權均為 ChenChuChu 所有。未經書面授權，禁止任何形式之翻印、擷取、爬蟲抓取或商業利用。</p>
+    </div>
+    <div class="legal-section">
+      <h3>4. 免責聲明</h3>
+      <p>本站雖經嚴謹開發與封閉測試，但對於因不可抗力因素（如電信業者服務中斷、天災、駭客攻擊）或第三方平台（如 Google 服務、GitHub 託管）異常所導致之服務延遲或資料遺失，本站及開發人員不負任何形式之賠償責任。</p>
+    </div>
+    <div class="legal-section">
+      <h3>5. 爭議處理</h3>
+      <p>本條款之解釋與適用，均依中華民國法律為準據法。若因本服務產生爭議，合意以台灣宜蘭地方法院為第一審管轄法院。</p>
+    </div>
+  </div>
+</div>
+
+<div class="legal-overlay" id="modal-pp">
+  <div class="legal-box">
+    <span class="legal-close" onclick="closeLegal('pp')">✕</span>
+    <h2>隱私權政策 Privacy Policy</h2>
+    <p style="margin-bottom:20px;font-size:12px;color:rgba(245,237,214,.3);">2026 蘇澳港灣漁悅季：個人資料保護與隱私權政策</p>
+    <p>為落實個人資料保護法，本站針對您所提供之個人資料，特此說明蒐集、處理及利用之方式：</p>
+    <div class="legal-section">
+      <h3>1. 蒐集之目的</h3>
+      <p>僅用於執行「2026 蘇澳港灣漁悅季」相關行政業務，包括報名確認、身分核對、保險辦理、活動通知及後續滿意度調查。</p>
+    </div>
+    <div class="legal-section">
+      <h3>2. 蒐集資料類別</h3>
+      <p>包含姓名、性別、出生日期、身分證字號（如需辦理保險）、連絡電話、電子郵件地址等活動必要資訊。</p>
+    </div>
+    <div class="legal-section">
+      <h3>3. 資料利用之期間與地區</h3>
+      <ul>
+        <li>期間：自報名日起至活動結束後一年內。</li>
+        <li>地區：僅限於台灣地區（台、澎、金、馬）。</li>
+      </ul>
+    </div>
+    <div class="legal-section">
+      <h3>4. 資料保護措施</h3>
+      <p>本站採用標準 SSL 加密傳輸協定，並將資料存儲於受監控之受保護雲端環境。除本活動必要之第三方（如保險公司、公車/船運業者）外，未經您的同意，絕不將資料提供、交換或出售給任何其他個人、團體或私人企業。</p>
+    </div>
+    <div class="legal-section">
+      <h3>5. 使用者權利告知</h3>
+      <p>依個人資料保護法第 3 條規定，您可隨時聯繫本站（<a href="mailto:suaoharbor@gmail.com" style="color:rgba(232,109,45,.7);">suaoharbor@gmail.com</a>）行使以下權利：</p>
+      <ul>
+        <li>查詢、閱覽或請求製給複製本。</li>
+        <li>請求補充或更正。</li>
+        <li>請求停止蒐集、處理、利用或請求刪除（如活動尚未進行，刪除資料可能導致取消參加資格）。</li>
+      </ul>
+    </div>
+    <div class="legal-section">
+      <h3>6. Cookie 之使用</h3>
+      <p>本站可能使用 Cookie 紀錄您的瀏覽偏好以優化使用體驗。您可透過瀏覽器設定關閉 Cookie，但可能導致部分功能無法正常運作。</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function openLegal(type) {
+  document.getElementById('modal-' + type).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLegal(type) {
+  document.getElementById('modal-' + type).classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.legal-overlay').forEach(el => {
+  el.addEventListener('click', e => { if (e.target === el) closeLegal(el.id.replace('modal-', '')); });
+});
 </script>
 </body>
 </html>
