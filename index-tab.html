@@ -223,8 +223,11 @@
     #strip { padding: 72px 0; background: linear-gradient(180deg, var(--deep-blue) 0%, rgba(232,109,45,.04) 50%, var(--deep-blue) 100%); overflow: hidden; }
     .strip-inner { max-width: 1380px; margin: 0 auto; padding: 0 52px; display: grid; grid-template-columns: 72px 1fr; gap: 44px; align-items: center; }
     .vtext { writing-mode: vertical-rl; text-orientation: upright; font-family: 'Noto Serif TC', serif; font-size: 18px; font-weight: 900; letter-spacing: 10px; color: rgba(232,109,45,.35); user-select: none; }
-    .strip-row { display: flex; gap: 16px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 4px; }
-    .strip-row::-webkit-scrollbar { display: none; }
+    .strip-row { display: flex; gap: 16px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: rgba(232,109,45,.35) rgba(27,48,69,.4); padding-bottom: 10px; }
+    .strip-row::-webkit-scrollbar { height: 4px; }
+    .strip-row::-webkit-scrollbar-track { background: rgba(27,48,69,.4); border-radius: 2px; }
+    .strip-row::-webkit-scrollbar-thumb { background: rgba(232,109,45,.35); border-radius: 2px; }
+    .strip-row::-webkit-scrollbar-thumb:hover { background: rgba(232,109,45,.6); }
     .sbadge { flex-shrink: 0; width: 188px; height: 188px; border-radius: 22px; background: rgba(27,48,69,.55); border: 1px solid rgba(232,109,45,.22); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center; padding: 18px; transition: border-color .3s, transform .3s; }
     .sbadge:hover { border-color: rgba(232,109,45,.5); transform: scale(1.04); }
     .sbadge-em { font-size: 30px; }
