@@ -1731,9 +1731,31 @@ document.getElementById('step3-submit').addEventListener('click', () => {
 
   const btn = document.getElementById('step3-submit');
   btn.disabled    = true;
-  btn.textContent = '送出中… Submitting…';
+  btn.textContent = '確認席次中…';
 
   regData.howHeard = howHeardVal;
+
+  // 送出前再查一次席次
+  fetch(APPS_SCRIPT_URL)
+    .then(r => r.json())
+    .then(data => {
+      const hcNum = parseInt(regData.headcount || '1');
+      if (data.count + hcNum > 300) {
+        btn.disabled = false;
+        btn.textContent = '送出報名 SUBMIT';
+        document.getElementById('reg-form-wrap').style.display = 'none';
+        document.getElementById('reg-full').style.display = 'block';
+        return;
+      }
+      submitRegForm(btn);
+    })
+    .catch(() => submitRegForm(btn));
+
+  return;
+});
+
+function submitRegForm(btn) {
+  btn.textContent = '送出中… Submitting…';
 
   const hc = regData.headcount || '1';
   const payload = new FormData();
@@ -1769,7 +1791,7 @@ document.getElementById('step3-submit').addEventListener('click', () => {
   if (APPS_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL_HERE') { setTimeout(finish, 800); return; }
   fetch(APPS_SCRIPT_URL, { method: 'POST', body: payload, mode: 'no-cors' })
     .then(finish).catch(finish);
-});
+}
 
 /* ── MUSIC PLAYER ── */
 const musicBtn  = document.getElementById('music-btn');
