@@ -885,7 +885,14 @@
       <h2 class="s-title">活動報名．訂下你的位置</h2>
       <p style="text-align:center;font-size:22px;font-family:'Noto Serif TC',serif;font-weight:900;color:var(--cream);letter-spacing:2px;margin-top:-8px;margin-bottom:32px;">封測期，報名會清零！<br><span style="font-size:15px;font-weight:400;color:rgba(245,237,214,.5);">正式報名時間已公告為主</span></p>
 
-      <div class="reg-wrap">
+      <!-- 額滿提示 -->
+      <div id="reg-full" style="display:none;text-align:center;padding:60px 0;">
+        <div style="font-size:52px;margin-bottom:20px;">🐟</div>
+        <h3 style="font-family:'Noto Serif TC',serif;font-size:26px;color:var(--cream);margin-bottom:12px;">報名已額滿</h3>
+        <p style="color:rgba(245,237,214,.5);font-size:14px;">300 席已全數報名完畢，感謝您的支持！<br>如有相關問題請聯繫主辦單位。</p>
+      </div>
+
+      <div class="reg-wrap" id="reg-form-wrap">
         <!-- Step indicator -->
         <div class="reg-step-bar">
           <div class="reg-dot active" id="rdot-1">1</div>
@@ -1869,6 +1876,22 @@ window.addEventListener('scroll', () => {
 </div>
 
 <script>
+// Registration quota check
+function checkRegQuota() {
+  fetch(APPS_SCRIPT_URL)
+    .then(r => r.json())
+    .then(data => {
+      if (data.count >= 300) {
+        document.getElementById('reg-full').style.display = 'block';
+        document.getElementById('reg-form-wrap').style.display = 'none';
+        const bar = document.querySelector('.reg-step-bar');
+        if (bar) bar.style.display = 'none';
+      }
+    })
+    .catch(() => {});
+}
+checkRegQuota();
+
 // Feedback open/close
 if (FEEDBACK_OPEN) {
   document.getElementById('nav-feedback-li').style.display = '';
