@@ -1745,7 +1745,7 @@ document.getElementById('step3-submit').addEventListener('click', () => {
     .then(r => r.json())
     .then(data => {
       const hcNum = parseInt(regData.headcount || '1');
-      if (data.count + hcNum > 300) {
+      if (data.count + hcNum > 280) {
         btn.disabled = false;
         btn.textContent = '送出報名 SUBMIT';
         document.getElementById('reg-form-wrap').style.display = 'none';
@@ -1908,7 +1908,7 @@ function checkRegQuota() {
   fetch(APPS_SCRIPT_URL)
     .then(r => r.json())
     .then(data => {
-      if (data.count >= 300) {
+      if (data.count >= 280) {
         document.getElementById('reg-full').style.display = 'block';
         document.getElementById('reg-form-wrap').style.display = 'none';
         const bar = document.querySelector('.reg-step-bar');
