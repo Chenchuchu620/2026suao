@@ -1942,7 +1942,7 @@ document.getElementById('step2-submit').addEventListener('click', () => {
     .then(r => r.json())
     .then(data => {
       const hcNum = parseInt(regData.headcount || '1');
-      if (data.count + hcNum > 270) {
+      if (data.count + hcNum > 230) {
         regData.overLimit = true;
       }
       submitRegForm(btn);
@@ -2112,7 +2112,7 @@ function checkRegQuota() {
   fetch(APPS_SCRIPT_URL)
     .then(r => r.json())
     .then(data => {
-      if (data.count >= 270) {
+      if (data.count >= 230) {
         document.getElementById('reg-full').style.display = 'block';
         document.getElementById('reg-form-wrap').style.display = 'none';
         const bar = document.querySelector('.reg-step-bar');
