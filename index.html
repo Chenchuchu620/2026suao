@@ -145,10 +145,9 @@
     .page.visible { opacity: 1; }
 
     /* ── PAGE: HOME ── */
-    /* Hero scroll zone */
-    #scroll-zone { height: 520vh; position: relative; }
-    #sticky-hero { position: sticky; top: 0; width: 100%; height: 100vh; overflow: hidden; }
-    #frame-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+    /* Hero */
+    #sticky-hero { position: relative; width: 100%; height: 100vh; overflow: hidden; }
+    #hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 80px; }
     #depth-top {
       position: absolute; inset: 0;
       background:
@@ -442,12 +441,6 @@
   <audio id="bg-music" src="Fishing Port Stage.mp3" loop preload="auto"></audio>
 </div>
 
-<!-- ── LOADING ── -->
-<div id="loading">
-  <img src="LOGOup.png" class="ld-logo" alt="蘇澳漁悅季">
-  <p class="ld-text">2026蘇澳港灣漁悅季 黑鮪浪潮 加載中</p>
-  <div class="ld-bar-wrap"><div class="ld-bar" id="ld-bar"></div></div>
-</div>
 
 <!-- ── FIXED NAV ── -->
 <nav id="nav">
@@ -474,29 +467,27 @@
 ════════════════════════════════════════════ -->
 <div id="page-home" class="page active visible">
 
-  <!-- Hero scroll zone -->
-  <div id="scroll-zone">
-    <div id="sticky-hero">
-      <canvas id="frame-canvas"></canvas>
-      <div id="glow-bloom"></div>
-      <div id="depth-top"></div>
+  <!-- Hero -->
+  <div id="sticky-hero">
+    <img id="hero-img" src="LOGOup.png" alt="2026蘇澳港灣漁悅季 黑鮪浪潮">
+    <div id="glow-bloom"></div>
+    <div id="depth-top"></div>
 
-      <div id="hero-bottom">
-        <div>
-          <div class="hero-kicker">2026 · SUAO · 宜蘭縣南方澳漁港</div>
-          <h1 class="hero-h1">漁<em>悅</em>季</h1>
-          <p class="hero-sub">2026 蘇澳港灣漁悅季　黑鮪浪潮</p>
-        </div>
-        <div class="hero-tags">
-          <div class="tag tag-orange">2026.06.20　限定登場</div>
-          <div class="tag tag-blue">宜蘭縣　南方澳漁港</div>
-        </div>
+    <div id="hero-bottom">
+      <div>
+        <div class="hero-kicker">2026 · SUAO · 宜蘭縣南方澳漁港</div>
+        <h1 class="hero-h1">漁<em>悅</em>季</h1>
+        <p class="hero-sub">2026 蘇澳港灣漁悅季　黑鮪浪潮</p>
       </div>
+      <div class="hero-tags">
+        <div class="tag tag-orange">2026.06.20　限定登場</div>
+        <div class="tag tag-blue">宜蘭縣　南方澳漁港</div>
+      </div>
+    </div>
 
-      <div id="scroll-cue">
-        <span>SCROLL</span>
-        <div class="cue-line"></div>
-      </div>
+    <div id="scroll-cue">
+      <span>SCROLL</span>
+      <div class="cue-line"></div>
     </div>
   </div>
 
@@ -688,7 +679,7 @@
       <h2 class="s-title">主辦單位</h2>
       <div class="mg">
         <a href="https://www.instagram.com/suaoharborjc/" target="_blank" rel="noopener" class="gc" style="text-align:center;text-decoration:none;">
-          <img src="partners/suaologo.png" alt="主辦單位" style="width:160px;height:160px;object-fit:cover;border-radius:50%;">
+          <img src="partners/suaologo.png" alt="主辦單位" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;">
           <h3 class="gc-h">蘇澳港國際青年商會</h3>
         </a>
       </div>
@@ -700,27 +691,88 @@
       <div class="s-label">— CO-ORGANIZER —</div>
       <h2 class="s-title">協力單位</h2>
       <div class="mg">
-        <div class="gc" style="text-align:center;"><span class="gc-icon">🤝</span><h3 class="gc-h"> </h3><p class="gc-p"> </p></div>
+        <div class="gc" style="text-align:center;"><img src="partners/宜蘭縣政府.png" alt="宜蘭縣政府" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"><h3 class="gc-h">宜蘭縣政府</h3></div>
+        <div class="gc" style="text-align:center;"><img src="partners/蘇澳鎮公所.png" alt="宜蘭縣蘇澳鎮公所" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"><h3 class="gc-h">宜蘭縣蘇澳鎮公所</h3></div>
+        <div class="gc" style="text-align:center;"><img src="partners/東北角.png" alt="交通部觀光署東北角及宜蘭海岸國家風景區管理處" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"><h3 class="gc-h">交通部觀光署東北角及宜蘭海岸國家風景區管理處</h3></div>
+        <div class="gc" style="text-align:center;"><img src="partners/中小企業.png" alt="中華民國全國中小企業總會" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"><h3 class="gc-h">中華民國全國中小企業總會</h3></div>
+        <div class="gc" style="text-align:center;"><img src="partners/城鄉島遊.png" alt="城鄉島遊" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"><h3 class="gc-h">城鄉島遊</h3></div>
       </div>
     </section>
 
     <hr style="border:none;border-top:1px solid rgba(232,109,45,.2);margin:48px 0;">
 
-    <section class="fade">
+    <section>
       <div class="s-label">— PARTNERS —</div>
       <h2 class="s-title">合作商家</h2>
+
+      <div class="s-label" style="margin-top:40px;margin-bottom:20px;">南方澳・海港慢遊</div>
       <div class="mg">
-        <div class="gc" style="text-align:center;"><a href="https://www.instagram.com/under_bridge_tw/" target="_blank" rel="noopener"><img src="partners/橋下.png" alt="橋下UNDER BRIDGE" style="width:160px;height:160px;object-fit:cover;border-radius:50%;"></a><h3 class="gc-h">橋下UNDER BRIDGE</h3><p class="gc-p"> </p></div>
-        <div class="gc" style="text-align:center;"><a href="https://linktr.ee/gogoao" target="_blank" rel="noopener"><img src="partners/走走澳.png" alt="走走澳 GO GO 'AO" style="width:160px;height:160px;object-fit:contain;border-radius:50%;border:2px solid #ccc;background-color:#fff;"></a><h3 class="gc-h">走走澳 GO GO 'AO</h3><p class="gc-p">走走澳為宜蘭蘇澳首個專業經營走讀品牌，深度帶領旅人認識海港文化</p></div>
-        <div class="gc" style="text-align:center;"><a href="https://linktr.ee/Hipeilife" target="_blank" rel="noopener"><img src="partners/海派.png" alt="蘇澳海派生活" style="width:160px;height:160px;object-fit:cover;border-radius:50%;"></a><h3 class="gc-h">蘇澳海派生活::HIPEI FILE</h3><p class="gc-p">SUP立槳｜浮潛｜獨木舟｜水肺潛水課程｜牛奶海重型帆船｜海鮮無菜單料理</p></div>
-        <div class="gc" style="text-align:center;"><img src="partners/碳休今呷.png" alt="碳休今呷" style="width:160px;height:160px;object-fit:cover;border-radius:50%;"><h3 class="gc-h">碳休今呷</h3><p class="gc-p"> </p></div>
-        <div class="gc" style="text-align:center;"><img src="partners/好海深.png" alt="好海深" style="width:160px;height:160px;object-fit:cover;border-radius:50%;"><h3 class="gc-h">好海深</h3><p class="gc-p"> </p></div>
-        <div class="gc" style="text-align:center;"><img src="partners/地中海.png" alt="地中海" style="width:160px;height:160px;object-fit:cover;border-radius:50%;"><h3 class="gc-h">地中海</h3><p class="gc-p"> </p></div>
-        <div class="gc" style="text-align:center;"><a href="https://linktr.ee/paipailab" target="_blank" rel="noopener"><img src="partners/拍拍造.png" alt="拍拍造 PaiPaiLab" style="width:160px;height:160px;object-fit:cover;border-radius:50%;"></a><h3 class="gc-h">拍拍造 PaiPaiLab</h3><p class="gc-p">全台唯一 AI/AR 互動拍貼與現場金屬周邊製作的活動體驗機，讓每位賓客帶走捨不得丟的專屬紀念</p></div>
-        <div class="gc" style="text-align:center;"><img src="partners/南寧社區.png" alt="南寧社區" style="width:160px;height:160px;object-fit:cover;border-radius:50%;"><h3 class="gc-h">南寧社區</h3><p class="gc-p"> </p></div>
-        <div class="gc" style="text-align:center;"><a href="https://www.eatme-parboiledrice.com/" target="_blank" rel="noopener"><img src="partners/益米.png" alt="益米預熟米" style="width:160px;height:160px;object-fit:cover;border-radius:50%;"></a><h3 class="gc-h">益米預熟米</h3><p class="gc-p">台灣獨家預熟米！口感像白米、營養像糙米，富含抗性澱粉飽足感延長</p></div>
-        <div class="gc" style="text-align:center;"><a href="https://www.robert-y.com.tw/" target="_blank" rel="noopener"><img src="partners/暴龍館.png" alt="Robert Y 廢墟-暴龍館" style="width:160px;height:160px;object-fit:cover;border-radius:50%;"></a><h3 class="gc-h">Robert Y 廢墟-暴龍館</h3><p class="gc-p">世界八大完整出土暴龍化石之一。</p></div>
-        <div class="gc" style="text-align:center;"><a href="https://www.buymackerel.com/" target="_blank" rel="noopener"><img src="partners/大鯖魚.png" alt="大鯖魚夢工廠" style="width:160px;height:160px;object-fit:cover;border-radius:50%;"></a><h3 class="gc-h">大鯖魚夢工廠</h3><p class="gc-p"> </p></div>
+        <div class="gc" style="text-align:center;"><a href="https://linktr.ee/gogoao" target="_blank" rel="noopener"><img src="partners/走走澳 GO GO AO.png" alt="走走澳 GO GO AO" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">走走澳 GO GO 'AO</h3><p class="gc-p">走走澳為宜蘭蘇澳首個專業經營走讀品牌，深度帶領旅人認識海港文化。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/jag.org.tw" target="_blank" rel="noopener"><img src="partners/南方澳進安宮寶石珊瑚媽祖.png" alt="南方澳進安宮寶石珊瑚媽祖" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">南方澳進安宮寶石珊瑚媽祖</h3><p class="gc-p">全台首尊寶石珊瑚媽祖神像，全球唯一手雕法，守護南方澳居民。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.instagram.com/wuching_seafood/" target="_blank" rel="noopener"><img src="partners/午鯖.png" alt="午鯖" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">午鯖</h3><p class="gc-p">鮮魚湯專賣，傳承漁村媽媽的味道，嚴選在地定置漁場直送食材。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.instagram.com/harbourcafe_nanfangao/" target="_blank" rel="noopener"><img src="partners/小漁村咖啡.png" alt="小漁村咖啡" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">小漁村咖啡</h3><p class="gc-p">不限時｜寵物友善｜店狗｜供插座</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.instagram.com/wusainsushi_/" target="_blank" rel="noopener"><img src="partners/五鮮握壽司.png" alt="五鮮握壽司" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">五鮮握壽司</h3><p class="gc-p">生魚片・握壽司・當令漁獲</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.instagram.com/lemon_lime_bitters89/" target="_blank" rel="noopener"><img src="partners/酒橙榙.png" alt="酒橙榙" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">酒橙榙</h3><p class="gc-p">義大利麵・燉飯・海鮮 Pasta | Risotto | Seafood | Beer</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://maps.app.goo.gl/2EpjWgPdsA4KS9KU8" target="_blank" rel="noopener"><img src="partners/三魚市場.png" alt="三魚市場" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">三魚市場</h3><p class="gc-p">由蘇澳區漁會打造，融合漁業文化與食魚教育，體驗海洋魅力的必訪景點。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/YuanTingliveseafood" target="_blank" rel="noopener"><img src="partners/元町活海鮮.png" alt="元町活海鮮" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">元町活海鮮</h3><p class="gc-p">1983年至今四十餘年，三代傳承，堅持極鮮款待。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/SUAOMA" target="_blank" rel="noopener"><img src="partners/蘇澳媽黑糖糕.png" alt="蘇澳媽黑糖糕" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">蘇澳媽黑糖糕</h3><p class="gc-p">平安幸福南方澳，蘇澳媽祖黑糖糕</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://maps.app.goo.gl/BrFKqH8hJDxSYbEk7" target="_blank" rel="noopener"><img src="partners/MAGADO Coffee南方澳點.png" alt="MAGADO Coffee南方澳點" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">MAGADO Coffee</h3><p class="gc-p">隱身於蘇澳漁港巷弄內的在地特色老屋咖啡廳，感受慢靈魂生活步調。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://maps.app.goo.gl/KURvin1VJYUoA9bB8" target="_blank" rel="noopener"><img src="partners/港頭仔肉圓.png" alt="港頭仔肉圓" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">港頭仔肉圓</h3><p class="gc-p">大隱隱於市，於廟口商家之間的美味</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/share/1Cn2KGRBkC/?mibextid=wwXIfr" target="_blank" rel="noopener"><img src="partners/阿賽喇冰.png" alt="阿賽喇冰" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">阿賽喇冰</h3><p class="gc-p">建立於1923年，百年老店，回鄉人記憶中的味道，來南方澳不容錯過。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://maps.app.goo.gl/Q66zp1XVyjbiRRVA9" target="_blank" rel="noopener"><img src="partners/蘇澳港廟口廖榮川米糕.png" alt="蘇澳港廟口廖榮川米糕" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">廖榮川米糕</h3><p class="gc-p">走訪南方澳的在地美味</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.instagram.com/norimori_shop_and_house/" target="_blank" rel="noopener"><img src="partners/NORIMORI Shop &amp; House.png" alt="NORIMORI Shop &amp; House" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">NORIMORI Shop &amp; House</h3><p class="gc-p">從田野間跑到海岸村的店鋪，分享美好的道具與生活！</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://daisylight.my.canva.site" target="_blank" rel="noopener"><img src="partners/光涵行旅.png" alt="光涵行旅" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">光涵行旅</h3><p class="gc-p">像來南方澳朋友家一樣，放慢腳步，感受海風、雨水與陽光，體驗慢活。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/fishball22" target="_blank" rel="noopener"><img src="partners/秀慈飛虎魚丸.png" alt="秀慈飛虎魚丸" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">秀慈飛虎魚丸</h3><p class="gc-p">以南方澳新鮮漁獲製作手工魚丸，傳承漁港美味與海洋文化。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/groups/2784297445097275/" target="_blank" rel="noopener"><img src="partners/蘇澳鎮南寧社區.png" alt="蘇澳鎮南寧社區" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">蘇澳鎮南寧社區</h3><p class="gc-p">透過影像與文字，讓更多人看見南方澳的家園與生活的美好。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/people/%E9%98%BF%E7%BE%8Emama%E6%89%8B%E4%BD%9C%E5%BB%9A%E6%88%BF/100064932076190/" target="_blank" rel="noopener"><img src="partners/阿美mama手作廚房.png" alt="阿美mama手作廚房" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">阿美mama手作廚房</h3><p class="gc-p">港邊廚房，預約制，寵物友善餐廳。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.instagram.com/casa__cafe/" target="_blank" rel="noopener"><img src="partners/地中海CASA 海洋1館.png" alt="地中海CASA 海洋1館" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">地中海CASA 海洋1館</h3><p class="gc-p">情人灣畔藍白希臘風海景餐廳，至高視野俯瞰無敵海景。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.instagram.com/wecafe_catering/" target="_blank" rel="noopener"><img src="partners/We cafe我們的海灣咖啡.png" alt="We cafe我們的海灣咖啡" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">We cafe 我們的海灣咖啡</h3><p class="gc-p">在我們的家，開了一間屬於我們的海灣咖啡廳，分享家的溫度。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://linktr.ee/Hipeilife" target="_blank" rel="noopener"><img src="partners/蘇澳海派生活.png" alt="蘇澳海派生活" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">蘇澳海派生活</h3><p class="gc-p">SUP立槳｜浮潛｜獨木舟｜水肺潛水｜重型帆船｜海鮮無菜單料理</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://180613022735.web.fullinn.tw/" target="_blank" rel="noopener"><img src="partners/光之旅BRIGHTHOUSE.png" alt="光之旅BRIGHTHOUSE" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">光之旅 BRIGHTHOUSE</h3><p class="gc-p">全亞洲唯一燈塔海景飯店</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/zhudayu039951050/mentions/" target="_blank" rel="noopener"><img src="partners/祝大漁物產館.png" alt="祝大漁物產館" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">祝大漁物產館</h3><p class="gc-p">以魚類和漁業為主題的小巧博物館，展示珊瑚、貝殼與在地海洋文化。</p></div>
+      </div>
+
+      <div class="s-label" style="margin-top:52px;margin-bottom:20px;">蘇澳鎮・午後慢活</div>
+      <div class="mg">
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/profile.php?id=100077178926011" target="_blank" rel="noopener"><img src="partners/阿英小吃部.png" alt="阿英小吃部" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">阿英小吃部</h3><p class="gc-p">煙燻魚雜，在地傳承幾十年的美味</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://maps.app.goo.gl/seBDGuG2phCHcU6H8" target="_blank" rel="noopener"><img src="partners/蘇澳租機車.png" alt="蘇澳租機車" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">蘇澳租機車</h3><p class="gc-p">離蘇澳火車站最近的租車點</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://linkgoods.com/misscoldspring" target="_blank" rel="noopener"><img src="partners/冷泉姐姐手工皂.png" alt="冷泉姐姐手工皂" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">冷泉姐姐手工皂</h3><p class="gc-p">把蘇澳冷泉的純淨做成一塊手工皂。手工皂冷皂｜客製｜手作體驗｜在地導覽</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/p/%E9%A6%96%E9%83%BD%E7%A2%B3%E7%83%A4-%E8%98%87%E6%BE%B3%E5%BA%97-61569939009497/" target="_blank" rel="noopener"><img src="partners/首都碳烤.png" alt="首都碳烤" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">首都碳烤</h3><p class="gc-p">特製烤肉醬均勻沾抹，每串最低$15元起，值得嘗試的碳烤店</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://maps.app.goo.gl/sjiBNK8ytctHczXr7" target="_blank" rel="noopener"><img src="partners/靛Cafe.png" alt="靛Cafe" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">靛 Cafe</h3><p class="gc-p">結合老宅、歐洲工業風與藝文氣息的寵物友善咖啡廳。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://reurl.cc/18a48p" target="_blank" rel="noopener"><img src="partners/蘇澳冷泉園區.png" alt="蘇澳冷泉園區" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">蘇澳冷泉園區</h3><p class="gc-p">全球罕見低溫碳酸氫鈣泉，百年蘇澳冷泉，沁涼療癒每段旅程。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/guchaumusic" target="_blank" rel="noopener"><img src="partners/鼓潮音樂.png" alt="鼓潮音樂" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">鼓潮音樂</h3><p class="gc-p">推廣音樂教育與藝術生活，提供專業教學、販售、商業演出及體驗活動。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/LightenCafe" target="_blank" rel="noopener"><img src="partners/光覺咖啡.png" alt="光覺咖啡" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">光覺咖啡</h3><p class="gc-p">結合原民風味與在地人情味，用一杯咖啡陪你感受蘇澳日常。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/50shabushabu/" target="_blank" rel="noopener"><img src="partners/舞食鍋物.png" alt="舞食鍋物" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">舞食鍋物</h3><p class="gc-p">以暖心鍋物串起家人與好友的快樂時光，品味最自然的鮮甜。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/Hongtai.tireman?locale=zh_TW" target="_blank" rel="noopener"><img src="partners/宏泰汽車輪胎館.png" alt="宏泰汽車輪胎館" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">宏泰汽車輪胎館</h3><p class="gc-p">宏泰職人精神，給您最安心的服務。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/people/%E6%9D%B1%E6%A3%AE%E5%AF%B5%E7%89%A9%E9%9B%B2-%E8%98%87%E6%BE%B3%E4%B8%AD%E5%B1%B1%E5%BA%97/100086097632411/" target="_blank" rel="noopener"><img src="partners/東森寵物 蘇澳中山店.png" alt="東森寵物 蘇澳中山店" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">東森寵物 蘇澳中山店</h3><p class="gc-p">在地毛孩生活館，結合專業服務與暖心照護，蘇澳最有溫度的寵物空間。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://maps.app.goo.gl/E9XrDVFH2CzCRmC1A" target="_blank" rel="noopener"><img src="partners/丁丁食肆.png" alt="丁丁食肆" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">丁丁食肆</h3><p class="gc-p">在地的好滋味，首推炸醬麵</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/share/1BMxb9MnNq/?mibextid=wwXIfr" target="_blank" rel="noopener"><img src="partners/鴨鄉寶煙燻冰滷味.png" alt="鴨鄉寶煙燻冰滷味" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">鴨鄉寶煙燻冰滷味</h3><p class="gc-p">嚴選櫻桃鴨與各式滷味，香醇入味，冰涼爽口。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://tw-bnb.com/web/moon/" target="_blank" rel="noopener"><img src="partners/沄禾玥民宿.png" alt="沄禾玥民宿" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">沄禾玥民宿</h3><p class="gc-p">位於宜蘭蘇澳，提供平價舒適住宿，適合旅遊放鬆與親子入住。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.buymackerel.com/" target="_blank" rel="noopener"><img src="partners/大鯖魚夢工廠.png" alt="大鯖魚夢工廠" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">大鯖魚夢工廠</h3><p class="gc-p">全台唯一鯖魚主題觀光工廠，高品質海產、美味伴手禮、主題體驗展。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.robert-y.com.tw" target="_blank" rel="noopener"><img src="partners/RobertY廢墟暴龍館.png" alt="RobertY廢墟暴龍館" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">RobertY 廢墟暴龍館</h3><p class="gc-p">世界八大完整出土暴龍化石之一。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.anyomuseum.com/" target="_blank" rel="noopener"><img src="partners/安永心食館.png" alt="安永心食館" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">安永心食館</h3><p class="gc-p">結合食育、文化與體驗，打造輕鬆玩、自在吃的觀光工廠空間。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.baimiclogs.com/" target="_blank" rel="noopener"><img src="partners/白米木屐館.png" alt="白米木屐館" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">白米木屐館</h3><p class="gc-p">全台木屐重要供應地，傳承社區之寶，體驗木屐文化之旅。</p></div>
+      </div>
+
+      <div class="s-label" style="margin-top:52px;margin-bottom:20px;">全宜蘭・假期旅遊</div>
+      <div class="mg">
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/tjukucafe" target="_blank" rel="noopener"><img src="partners/啾咕咖啡.png" alt="啾咕咖啡" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">啾咕咖啡</h3><p class="gc-p">返鄉青年與排灣族女孩，為女兒手作不添加防腐劑的甜點咖啡廳。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.instagram.com/mostnatural_hotspring2026?igsh=ZHo5NWtwbGhvb2Y1" target="_blank" rel="noopener"><img src="partners/自然風溫泉會館.png" alt="自然風溫泉會館" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">自然風溫泉會館</h3><p class="gc-p">山腳下靜謐溫泉，群山擁抱眺望龜山島，享受漫活輕鬆時光。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.instagram.com/mumu_hanshitang/" target="_blank" rel="noopener"><img src="partners/木木韓食堂.png" alt="木木韓食堂" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">木木韓食堂</h3><p class="gc-p">自種有機蔬菜與傳承手藝，將溫暖純粹的韓國美味留在礁溪家鄉。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/maze3399?locale=zh_TW" target="_blank" rel="noopener"><img src="partners/地中海CasA 星空2館.png" alt="地中海CasA 星空2館" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">地中海CasA 星空2館</h3><p class="gc-p">全宜蘭最大夜景咖啡廳，佔地1000坪，座位近300個，視野最遼闊！</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://linktr.ee/ilnvegfresh" target="_blank" rel="noopener"><img src="partners/山上看菜.png" alt="山上看菜" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">山上看菜</h3><p class="gc-p">以友善農業為核心，帶領民眾走進山上產地，認識土地、文化與農作的價值。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/SilanTemu/" target="_blank" rel="noopener"><img src="partners/喜浪鐵沐料理廚坊.png" alt="喜浪鐵沐料理廚坊" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">喜浪鐵沐料理廚坊</h3><p class="gc-p">以原住民料理、音樂與文化體驗，分享宜蘭部落餐桌的溫度與故事。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.instagram.com/izakaya__dream/" target="_blank" rel="noopener"><img src="partners/碳休今呷串燒酒場.png" alt="碳休今呷串燒酒場" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">碳休今呷串燒酒場</h3><p class="gc-p">日式風味醬汁精心熬煮，亦提供預約到府服務及食材販售。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.instagram.com/dream_izakaya/" target="_blank" rel="noopener"><img src="partners/碳休今呷居酒屋.png" alt="碳休今呷居酒屋" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">碳休今呷居酒屋</h3></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.instagram.com/hao_hai_shen/" target="_blank" rel="noopener"><img src="partners/好海深鮮魚小料理.png" alt="好海深鮮魚小料理" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">好海深鮮魚小料理</h3></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.instagram.com/lao_jia" target="_blank" rel="noopener"><img src="partners/佬家咖啡.png" alt="佬家咖啡" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">佬家咖啡</h3></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.instagram.com/under_bridge_tw/" target="_blank" rel="noopener"><img src="partners/橋下Under Bridge.png" alt="橋下Under Bridge" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">橋下 Under Bridge</h3><p class="gc-p">隱身羅東夜市大通街內，簡單・純粹・精緻的風味質感調酒吧。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://thedew.com.tw/rooms/fly-inn/" target="_blank" rel="noopener"><img src="partners/FLY INN 飛旅宿.png" alt="FLY INN 飛旅宿" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">FLY INN 飛旅宿</h3><p class="gc-p">住進宜蘭人的家，體驗道地鄉村生活，透過旅遊達人介紹深度之旅。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.instagram.com/yuguo.2025?igsh=bWR3djl4M25yNmlp&amp;utm_source=qr" target="_blank" rel="noopener"><img src="partners/羽菓茶寮.png" alt="羽菓茶寮" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">羽菓茶寮</h3><p class="gc-p">日式家常料理・義大利麵・丼飯・燉飯・手作和菓子與特色甜點</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/YSPWAPMGNO.15" target="_blank" rel="noopener"><img src="partners/三星銀柳鄉.png" alt="三星銀柳鄉" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">三星銀柳鄉</h3><p class="gc-p">認識宜蘭特有花卉「銀柳」，從三星把財富自由帶回家</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/LeLeLanding" target="_blank" rel="noopener"><img src="partners/LeLeLand樂樂園生態聚落.png" alt="LeLeLand樂樂園生態聚落" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">LeLeLand 樂樂園生態聚落</h3><p class="gc-p">以「土地的遊樂園」為核心，將閒置空間與在地文化轉化為生命力的體驗場域。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://www.facebook.com/share/17nUWK9W9d/?mibextid=wwXIfr" target="_blank" rel="noopener"><img src="partners/露境東岳.png" alt="露境東岳" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">露境東岳</h3><p class="gc-p">露營住宿外，體驗越野車探索、海岸秘境、大草地放鬆及親子戶外活動。</p></div>
+        <div class="gc" style="text-align:center;"><a href="https://nsng.tw" target="_blank" rel="noopener"><img src="partners/那山那谷.png" alt="那山那谷" style="width:160px;height:160px;object-fit:contain;border-radius:50%;background:#fff;"></a><h3 class="gc-h">那山那谷</h3><p class="gc-p">以山林為教室，結合漂流、露營與文化體驗，推動地方觀光與永續發展。</p></div>
       </div>
     </section>
     <div class="cta-card fade" style="margin-top:52px;">
@@ -798,6 +850,12 @@
             <p class="gc-p">全台唯一 AI/AR 互動拍貼與現場金屬周邊製作的活動體驗機，讓每位賓客帶走捨不得丟的專屬紀念</p>
           </div>
         </a>
+        <div class="gc gc-glow" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px;">
+          <img src="sponsors/鈞豪.png" alt="鈞豪音響" style="width:120px;height:120px;object-fit:contain;border-radius:50%;background:#fff;">
+          <div>
+            <h3 class="gc-h" style="font-size:20px;">鈞豪音響</h3>
+          </div>
+        </div>
       </div>
     </section>
     <div class="cta-card fade" style="margin-top:52px;">
@@ -1451,100 +1509,21 @@
 </div>
 
 <script>
-/* ============================================================
-   FRAME SEQUENCE
-   ============================================================ */
-const TOTAL = 192;
-const DIR   = 'frames/';
+const cue     = document.getElementById('scroll-cue');
+const progBar = document.getElementById('scroll-progress');
 
-const canvas   = document.getElementById('frame-canvas');
-const ctx      = canvas.getContext('2d');
-const bloom    = document.getElementById('glow-bloom');
-const cue      = document.getElementById('scroll-cue');
-const ldBar    = document.getElementById('ld-bar');
-const ldScreen = document.getElementById('loading');
-const progBar  = document.getElementById('scroll-progress');
-
-const imgs = new Array(TOTAL).fill(null);
-let loaded = 0, curF = 0, tgtF = 0, raf = null, ready = false;
-
-function resize() {
-  canvas.width  = window.innerWidth;
-  canvas.height = window.innerHeight;
-  drawFrame(Math.round(curF));
-}
-window.addEventListener('resize', resize, { passive: true });
-resize();
-
-function drawFrame(i) {
-  const img = imgs[i];
-  if (!img || !img.complete) return;
-  const cw = canvas.width, ch = canvas.height;
-  const iw = img.naturalWidth, ih = img.naturalHeight;
-  const scale = Math.max(cw / iw, ch / ih);
-  const sw = iw * scale, sh = ih * scale;
-  ctx.clearRect(0, 0, cw, ch);
-  ctx.fillStyle = '#1B3045';
-  ctx.fillRect(0, 0, cw, ch);
-  ctx.drawImage(img, (cw - sw) / 2, (ch - sh) / 2, sw, sh);
-}
-
-function animLoop() {
-  const diff = tgtF - curF;
-  if (Math.abs(diff) > 0.3) { curF += diff * 0.14; drawFrame(Math.round(curF)); }
-  else { curF = tgtF; drawFrame(Math.round(curF)); }
-  raf = requestAnimationFrame(animLoop);
-}
-function stopLoop() { if (raf) { cancelAnimationFrame(raf); raf = null; } }
-
-function setBloom(p) {
-  const mid  = Math.sin(p * Math.PI);
-  const size  = 55 + mid * 22;
-  const alpha = 0.07 + mid * 0.28;
-  bloom.style.background = `radial-gradient(ellipse ${size}% ${size}% at 50% ${50 + p * 12}%,rgba(232,${Math.round(109+p*18)},45,${alpha.toFixed(3)}) 0%,transparent 70%)`;
-}
-
-function onScroll() {
+window.addEventListener('scroll', () => {
   if (currentPage !== 'home') return;
-  const zone = document.getElementById('scroll-zone');
-  const maxY = zone.offsetHeight - window.innerHeight;
-  const p    = Math.max(0, Math.min(1, window.scrollY / maxY));
-  tgtF = p * (TOTAL - 1);
-  setBloom(p);
   cue.style.opacity = Math.max(0, 1 - window.scrollY / 160);
   const full = document.body.scrollHeight - window.innerHeight;
   if (full > 0) progBar.style.width = ((window.scrollY / full) * 100).toFixed(2) + '%';
-}
-window.addEventListener('scroll', onScroll, { passive: true });
+}, { passive: true });
 
 /* Nav transparency */
 window.addEventListener('scroll', () => {
   if (currentPage !== 'home') return;
-  const zone = document.getElementById('scroll-zone');
-  const pastHero = window.scrollY > zone.offsetHeight - window.innerHeight * 0.5;
-  nav.classList.toggle('on-hero', !pastHero && window.scrollY < 80);
+  nav.classList.toggle('on-hero', window.scrollY < 80);
 }, { passive: true });
-
-(function preload() {
-  for (let i = 0; i < TOTAL; i++) {
-    const im = new Image();
-    im.onload = () => {
-      loaded++;
-      ldBar.style.width = ((loaded / TOTAL) * 100).toFixed(1) + '%';
-      if (!ready && i === 0) drawFrame(0);
-      if (loaded === TOTAL) {
-        setTimeout(() => {
-          ldScreen.classList.add('out');
-          ready = true;
-          if (!raf) animLoop();
-        }, 350);
-      }
-    };
-    im.onerror = () => { loaded++; };
-    im.src = `${DIR}frame_${String(i).padStart(4, '0')}.jpg`;
-    imgs[i] = im;
-  }
-})();
 
 /* ============================================================
    PAGE SWITCHING
@@ -1573,10 +1552,8 @@ function showPage(name) {
     }));
 
     if (name === 'home') {
-      if (!raf && ready) animLoop();
       nav.classList.add('on-hero');
     } else {
-      stopLoop();
       nav.classList.remove('on-hero');
     }
     currentPage = name;
